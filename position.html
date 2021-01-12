@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        .box_1, .box_2, .box_3, .box_4 { width: 100%; height: 100vh; background-color: seagreen; position: static}
+        .box_1 { background-color: red; position: fixed; top: 0; left: 0; width: 600px; height: 100px;}
+        /* fixed: 화면 기준으로 위치, 스크롤시 영향받지 않음, 공백이 없음 */
+        .box_2 { position: relative; top: 200px; left: 200px; background-color: rgba(244, 232, 66, 0.6);}
+        /* relative: 원래 위치를 기준으로 이동, 공백이 생김 */
+        .text_2 { position: absolute; top: 100px; left: 100px;}
+        /* absolute: relative인 부모 기준으로 이동 */
+        .box_3 { position: absolute; top: 500px; left: 300px;}
+        /* 위치지정 부모요소가 없으면 body 블럭을 기준으로 이동 */
+
+        .box_4 { background-color: violet; position: sticky; top: 200px;}
+
+        .text_3 { position: sticky; top: 100px; }
+        /* sticky: 설정 위치 값에서 고정되어 있다가 스크롤이 끝나면 고정이 풀리고 같이 따라 올라감 */
+        /* z-index: 스택되는 순서를 변경함, -값일 경우 static 아래로 위치 함*/
+        /* html에 작성된 순서에 따라 스택됨 */
+    </style>
+</head>
+<body>
+    <div class="box_1">
+        <h1 class="text_1">Fixed</h1>
+    </div>
+    <div  class="box_2">Relative(부모)
+        <h2 class="text_2">Absolute(자식)</h2>
+    </div>
+    <div  class="box_3">
+        <h2 class="text_3">Absolute(위치지정 부모 없음)</h2>
+    </div>
+    <div  class="box_4">
+        <h2 class="text_4">Sticky</h2>
+    </div>
+    <div  class="box_4">
+        <h2 class="text_4">Sticky</h2>
+    </div>
+    <div  class="box_4">
+        <h2 class="text_4">Sticky</h2>
+    </div>
+</body>
+</html>
